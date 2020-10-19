@@ -243,6 +243,10 @@ void
 TransportMaster::set_session (Session* s)
 {
 	_session = s;
+	if (!_session) {
+		printf ("TransportMaster::set_session\n");
+		unregister_port ();
+	}
 }
 
 int
